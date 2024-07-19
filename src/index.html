@@ -5,24 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UWB Trilateration Demo</title>
   <link rel="stylesheet" href="styles.css"> 
-  <script src="script.js"></script>
 </head>
 <body>
+  <button id="sidebar-toggle" class="sidebar-toggle">△</button>
+  <div id="sidebar" class="sidebar">
+    <h3>Connected Beacons</h3>
+  </div>
   <div id="main-container">
-    <div id="beacon-list">
-        <h3>Connected Beacons</h3>
-        <div class="beacon"></div>
-        <div class="beacon"></div>
-        <div class="beacon"></div>
-    </div>
-    <div id="right-container">
+    <div id="container">
         <div id="input-container">
           <div class="input-wrapper">
-            <input type="number" id="room-width" placeholder="w">
+            <input type="number" id="room-width" placeholder="w" value="1">
             x
-            <input type="number" id="room-height" placeholder="h">
+            <input type="number" id="room-height" placeholder="h" value="1">
           </div>
-          <button onclick="updateRectangle()">Update</button>
+          <div id="error-message" class="error"></div>
         </div>
         <div id="visualization">
             <div id="rectangle"></div>
@@ -30,4 +27,5 @@
     </div>
 </div>
 </body>
+<script src="script.js"></script>
 </html>

@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    font-family: Verdana;
+    font-family: helvetica, sans-serif;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -13,7 +13,7 @@ body {
     top: 10px;
     left: 10px;
     z-index: 2;
-    background: #fff;
+    background: transparent;
     border: none;
     padding-left: 8px;
     padding-right: 8px;
@@ -51,6 +51,44 @@ body {
 
 .sidebar.collapsed {
     transform: translateX(-100%);
+}
+
+
+.triangle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.box {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    background: transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+/* Style for the box when a triangle is being dragged */
+.box.dragging {
+    background: #e0e0e0; /* Light gray shade */
+    border-color: #999; /* Slightly darker border */
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid blue;
+    position: absolute;
+    cursor: grab;
+    transition: background-color 0.3s;
 }
 
 #error-message {
@@ -112,6 +150,8 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    flex: 1;
+    width: 100%;
 }
 
 #rectangle {
@@ -124,11 +164,20 @@ body {
     transition: width 0.3s ease, height 0.3s ease;
 }
 
-/* Active and inactive button states */
-.sidebar-toggle.active {
-    background-color: #f0f0f0; /* Same color as the sidebar */
+#coordinates-bottom-left, #coordinates-top-right {
+    position: absolute;
+    font-size: 12px;
+    color: black;
+    padding: 4px 5px;
+    border-radius: 3px;
+    transition: 0.3s ease;
+
 }
 
-.sidebar-toggle.inactive {
-    background-color: #fff; /* Same color as the main screen */
+#coordinates-bottom-left {
+    transform: translate(-100%, 100%);
+}
+
+#coordinates-top-right {
+    transform: translate(100%, -100%);
 }

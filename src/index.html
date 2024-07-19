@@ -9,7 +9,12 @@
 <body>
   <button id="sidebar-toggle" class="sidebar-toggle">△</button>
   <div id="sidebar" class="sidebar">
-    <h3>Connected Beacons</h3>
+    <h3>Connected Beacons:</h3>
+    <div class="triangle-container">
+      <div class="box" id="box1"><div class="triangle"></div></div>
+      <div class="box" id="box2"><div class="triangle"></div></div>
+      <div class="box" id="box3"><div class="triangle"></div></div>
+    </div>
   </div>
   <div id="main-container">
     <div id="container">
@@ -23,6 +28,8 @@
         </div>
         <div id="visualization">
             <div id="rectangle"></div>
+            <!-- <div id="coordinates-bottom-left">(0, 0)</div>
+            <div id="coordinates-top-right">(w, h)</div> -->
         </div>
     </div>
 </div>
